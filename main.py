@@ -13,7 +13,7 @@ def cifrar(entrada, pos, operacion):
      for y in entrada.lower():
             if y in letras:
                         index = letras.index(y)
-                        status = index + pos if operacion == 'descifrar' else index - pos
+                        status = index + pos if operacion == 'cifrar' else index - pos
                         nueva_letra = letras[( status) % len(letras)]
                         salida.append(nueva_letra)
             else:
