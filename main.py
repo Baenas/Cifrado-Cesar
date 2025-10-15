@@ -1,22 +1,40 @@
 import string
+import argparse
+
 
 pos = 3
 entrada = "hola adios"
 letras = string.ascii_lowercase
 resultado = ''
-def cifrar(entrada, pos):
+
+
+def cifrar(entrada, pos, operacion):
      salida = []
      for y in entrada.lower():
             if y in letras:
                         index = letras.index(y)
-                        nueva_letra = letras[(index + pos) % len(letras)]
+                        status = index + pos if operacion == 'descifrar' else index - pos
+                        nueva_letra = letras[( status) % len(letras)]
                         salida.append(nueva_letra)
             else:
                 salida.append(y)
                 
-     print(''.join(salida))       
+     print(''.join(salida))        
      return ''.join(salida)
-                    
 
-cifrar(entrada, pos)
+             
+parser = argparse.ArgumentParser(description='Encriptación Cesar')
+parser.add_argument('-i', '--indice', type=int, help='Indice ')
+parser.add_argument('-o', '--operacion', type=str, choices=['cifrar', 'descifrar'],
+                    default='cifrar', required=True,
+                    help='Operación para cifrar')
 
+parser.add_argument('-texto','-t', type=str, required=True,
+                    help='Texto a cifrar')
+
+args = parser.parse_args()
+
+if args.operacion == 'cifrar':
+        cifrar(args.texto, args.indice, args.operacion)
+elif args.operacion == 'descifrar':
+        cifrar(args.texto, args.indice , args.operacion)
