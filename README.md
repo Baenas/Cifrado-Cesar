@@ -25,3 +25,7 @@ Ejecuta el script desde la terminal:
 
 ```bash
 python main.py -i 19 -o cifrar -texto "Ejemplo de texto a cifrar"   
+
+
+python main.py -i 19 -o descifrar -texto "Ejemplo de texto a descifrar"   
+
