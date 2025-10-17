@@ -1,11 +1,7 @@
 import string
 import argparse
 
-
-pos = 3
-entrada = "hola adios"
 letras = string.ascii_lowercase
-resultado = ''
 
 
 def cifrar(entrada, pos, operacion):
