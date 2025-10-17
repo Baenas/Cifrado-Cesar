@@ -3,7 +3,6 @@ import argparse
 
 letras = string.ascii_lowercase
 
-
 def cifrar(entrada, pos, operacion):
      salida = []
      for y in entrada.lower():
@@ -17,7 +16,6 @@ def cifrar(entrada, pos, operacion):
                 
      print(''.join(salida))        
      return ''.join(salida)
-
              
 parser = argparse.ArgumentParser(description='Encriptación Cesar')
 parser.add_argument('-i', '--indice', type=int, help='Indice ')
